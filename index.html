@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>女神</title>
+	</head>
+	<style type="text/css">
+		#div1{
+			width:60%;
+			height: 80%;
+			background-size: cover;
+			border-radius: 10px;
+			position: absolute;
+			z-index: 2;
+			background-image: url(img/1.jpg);
+		}
+		#div2{
+			background: #ddd;
+			width: 70%;
+			height: 90%;
+			position: absolute;
+			z-index: 1;	
+			opacity:0.5;
+			background-image: url(img/1.jpg);
+			background-size: cover;
+				
+		}
+		.bg-blur {
+            float: left;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            -webkit-filter: blur(3px);
+            -moz-filter: blur(3px);
+            -o-filter: blur(3px);
+            -ms-filter: blur(3px);
+            filter: blur(3px);
+            
+        }
+        embed{
+        	width: 500px;
+        	height: 60px;
+        }
+	</style>
+	<body>
+		<embed height="100" width="100" src="css/1.mp3"></embed>
+		<div id="div0">
+			
+			<div id="div2" class="bg-blur"></div>
+			<div id="div1">
+			</div>
+		</div> 
+		<script type="text/javascript">
+			var div1 = document.getElementById('div1');
+			var div2 = document.getElementById('div2');
+			var a=['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg'];
+			var timer = null;
+			var num = 1;
+			timer = setInterval(function(){
+				div1.style.backgroundImage = 'url(img/'+a[num]+')';
+				div2.style.backgroundImage = 'url(img/'+a[num]+')';
+				num++;
+				if(num==9){
+					num=0;
+				}
+			},2000);
+		</script>
+	</body>
+</html>
